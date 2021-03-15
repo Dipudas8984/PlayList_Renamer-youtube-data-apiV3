@@ -7,14 +7,14 @@ youtube = build('youtube', 'v3', developerKey=api_key)
 # req = youtube.search().list(q='code with harry', part='snippet', type='video')
 # res = req.execute()
 # num = sys.argv[1]
-
+playlist_id = input("Enter The Play list Id : ")
 # ----------------
 nextPage = None
 list = []
 while True:
     res = youtube.playlistItems().list(
     part="snippet",
-    playlistId="PLu0W_9lII9ahIappRPN0MCAgtOu3lQjQi",
+    playlistId=playlist_id,
     maxResults='50',
     pageToken=nextPage,
     ).execute()
